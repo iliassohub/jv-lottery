@@ -7,9 +7,10 @@ public class Lottery {
     private final ColorSupplier colorSupplier = new ColorSupplier();
 
     public Ball getRandomBall() {
-        int randomNumber = random.nextInt(1, 101);
+        int lowerBound = 1;
+        int upperBound = 101;
+        int randomNumber = random.nextInt(lowerBound, upperBound);
         Colors color = colorSupplier.getRandomColor();
-        Ball ball = new Ball(color, randomNumber);
-        return ball;
+        return new Ball(color, randomNumber);
     }
 }
